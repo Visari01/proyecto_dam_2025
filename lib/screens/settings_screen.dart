@@ -11,10 +11,12 @@ class SettingsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(24.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: const [
             Text(
               'Versión 1.0',
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 32),
 
@@ -32,26 +34,27 @@ class SettingsScreen extends StatelessWidget {
                 Text(
                   '- André Alejandro Galán Barraza',
                   style: TextStyle(fontSize: 16),
+                  textAlign: TextAlign.center,
                 ),
                 Text(
                   '- Carlos Jose Campos Lopez',
                   style: TextStyle(fontSize: 16),
+                  textAlign: TextAlign.center,
                 ),
                 Text(
                   '- Julio Cesar Castillo Marroquin',
                   style: TextStyle(fontSize: 16),
+                  textAlign: TextAlign.center,
                 ),
                 Text(
                   '- Julio Cesar Lopez Lopez',
                   style: TextStyle(fontSize: 16),
+                  textAlign: TextAlign.center,
                 ),
                 Text(
                   '- Luis Enrique Ramirez Ruiz',
                   style: TextStyle(fontSize: 16),
-                ),
-                Text(
-                  '- Ricardo Alexander Morales Campos',
-                  style: TextStyle(fontSize: 16),
+                  textAlign: TextAlign.center,
                 ),
               ],
             ),

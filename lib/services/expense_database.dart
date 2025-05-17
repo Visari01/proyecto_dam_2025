@@ -38,9 +38,9 @@ class ExpenseDatabase {
     return expense.copyWith(id: id);
   }
 
-  Future<List<Expense>> getAllExpenses() async {
+  Future<List<Expense>> getAllExpenses({String orderBy = 'date DESC'}) async {
     final db = await instance.database;
-    final result = await db.query('expenses', orderBy: 'date DESC');
+    final result = await db.query('expenses', orderBy: orderBy);
     return result.map((map) => Expense.fromMap(map)).toList();
   }
 

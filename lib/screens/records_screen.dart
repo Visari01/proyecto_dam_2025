@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/expense.dart';
 import '../services/expense_database.dart';
-import '../widgets/expense_card.dart';
 
 class RegistroScreen extends StatefulWidget {
   const RegistroScreen({super.key});
@@ -113,9 +112,34 @@ class _RegistroScreenState extends State<RegistroScreen> {
                         _isSelecting
                             ? () => _toggleSelection(expense.id!)
                             : null,
-                    child: ExpenseCard(
-                      expense: expense,
-                      isSelected: _selectedIds.contains(expense.id),
+                    child: Card(
+                      color:
+                          _selectedIds.contains(expense.id)
+                              ? Colors.grey[300]
+                              : Colors.white,
+                      margin: const EdgeInsets.symmetric(
+                        horizontal: 16,
+                        vertical: 8,
+                      ),
+                      child: ListTile(
+                        title: Text(
+                          '${expense.category} - ${expense.description}',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text(
+                          expense.date.toLocal().toString().split(' ')[0],
+                        ),
+                        trailing: Text(
+                          (expense.amount >= 0 ? '+' : '-') +
+                              expense.amount.abs().toStringAsFixed(2),
+                          style: TextStyle(
+                            color:
+                                expense.amount >= 0 ? Colors.green : Colors.red,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                          ),
+                        ),
+                      ),
                     ),
                   );
                 },
